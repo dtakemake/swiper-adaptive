@@ -1,0 +1,35 @@
+{
+  "name": "swiper-adaptive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/*.ts\"",
+    "eslint": "eslint -c .eslintrc.json src/*.ts dist/*.js",
+    "prepare": "npm run build",
+    "preversion": "npm run eslint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtakemake/swiper-adaptive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtakemake/swiper-adaptive/issues"
+  },
+  "homepage": "https://github.com/dtakemake/swiper-adaptive#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  }
+}
