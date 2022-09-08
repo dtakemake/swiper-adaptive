@@ -6,6 +6,7 @@ declare type ToggleDirection = "up" | "down";
  * @param options - the SwiperOptions
  * @param breakpoint - on/off point
  * @param direction - direction of disable
+ * @return void
  */
 declare type SwiperAdaptive = {
     (selector: string, options: SwiperOptions, breakpoint?: number, direction?: ToggleDirection): void;

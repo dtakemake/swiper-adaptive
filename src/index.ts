@@ -8,6 +8,7 @@ type ToggleDirection = "up" | "down";
  * @param options - the SwiperOptions
  * @param breakpoint - on/off point
  * @param direction - direction of disable
+ * @return void
  */
 type SwiperAdaptive = {
   (
@@ -24,11 +25,13 @@ const swiperAdaptive: SwiperAdaptive = (
   breakpoint = 0,
   direction = "down"
 ) => {
-  // we can't call the Swiper if the breakpoint less 320px
-  if (breakpoint < 320) {
-    new Swiper(selector, options);
-  }
+  // if document don't have an element, exit the function
+  if (!document.querySelector(selector)) return;
 
+  // we will not call the Swiper if the breakpoint less 320px
+  if (breakpoint < 320) new Swiper(selector, options);
+
+  // Swiper instance
   let instance: Swiper | undefined = undefined;
 
   const initSwiper = () => {
