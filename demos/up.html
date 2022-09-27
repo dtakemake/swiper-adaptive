@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper adaptive, switching direction - up</title>
+  <link
+    rel="stylesheet"
+    href="./../node_modules/bootstrap/dist/css/bootstrap.css"
+  />
+  <link
+    rel="stylesheet"
+    href="./../node_modules/swiper/swiper-bundle.min.css"
+  />
+  <style>
+    [class*="up"] .swiper-slide {
+      background-color: #f1f1f1;
+    }
+  </style>
+  <script src="./../dist/demo.js"></script>
+</head>
+<body>
+  <header class="border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col py-4">
+          <h1 class="h6 mb-0">Swiper adaptive examples, switching direction - up</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col my-4 py-4">
+          <h2 class="h5 text-center">Enabled >=576</h2>
+          <div>
+            <!-- Slider main container -->
+            <div class="swiper swiper-576-up">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper text-center">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="p-5">Slide 1</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 2</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 3</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 4</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 5</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 6</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 7</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 8</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 9</div></div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <style>
+            @media (max-width: 575px) {
+              .swiper-576-up .swiper-wrapper {
+                --gap: .5rem;
+                flex-wrap: wrap;
+                gap: var(--gap);
+              }
+
+              .swiper-576-up .swiper-slide {
+                flex-basis: calc(33.333% - (var(--gap) * 2 / 3 ));
+                max-width: none;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col my-4 py-4">
+          <h2 class="h5 text-center">Enabled >=768</h2>
+          <div>
+            <!-- Slider main container -->
+            <div class="swiper swiper-768-up">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper text-center">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="p-5">Slide 1</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 2</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 3</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 4</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 5</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 6</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 7</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 8</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 9</div></div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <style>
+            @media (max-width: 767px) {
+              .swiper-768-up .swiper-wrapper {
+                --gap: .5rem;
+                flex-wrap: wrap;
+                gap: var(--gap);
+              }
+
+              .swiper-768-up .swiper-slide {
+                flex-basis: calc(33.333% - (var(--gap) * 2 / 3 ));
+                max-width: none;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col my-4 py-4">
+          <h2 class="h5 text-center">Enabled >=992</h2>
+          <div>
+            <!-- Slider main container -->
+            <div class="swiper swiper-992-up">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper text-center">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="p-5">Slide 1</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 2</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 3</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 4</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 5</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 6</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 7</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 8</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 9</div></div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <style>
+            @media (max-width: 991px) {
+              .swiper-992-up .swiper-wrapper {
+                --gap: .5rem;
+                flex-wrap: wrap;
+                gap: var(--gap);
+              }
+
+              .swiper-992-up .swiper-slide {
+                flex-basis: calc(33.333% - (var(--gap) * 2 / 3 ));
+                max-width: none;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col my-4 py-4">
+          <h2 class="h5 text-center">Enabled >=1200</h2>
+          <div>
+            <!-- Slider main container -->
+            <div class="swiper swiper-1200-up">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper text-center">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="p-5">Slide 1</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 2</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 3</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 4</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 5</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 6</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 7</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 8</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 9</div></div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <style>
+            @media (max-width: 1199px) {
+              .swiper-1200-up .swiper-wrapper {
+                --gap: .5rem;
+                flex-wrap: wrap;
+                gap: var(--gap);
+              }
+
+              .swiper-1200-up .swiper-slide {
+                flex-basis: calc(33.333% - (var(--gap) * 2 / 3 ));
+                max-width: none;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col my-4 py-4">
+          <h2 class="h5 text-center">Enabled >=1400</h2>
+          <div>
+            <!-- Slider main container -->
+            <div class="swiper swiper-1400-up">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper text-center">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="p-5">Slide 1</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 2</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 3</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 4</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 5</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 6</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 7</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 8</div></div>
+                <div class="swiper-slide"><div class="p-5">Slide 9</div></div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <style>
+            @media (max-width: 1399px) {
+              .swiper-1400-up .swiper-wrapper {
+                --gap: .5rem;
+                flex-wrap: wrap;
+                gap: var(--gap);
+              }
+
+              .swiper-1400-up .swiper-slide {
+                flex-basis: calc(33.333% - (var(--gap) * 2 / 3 ));
+                max-width: none;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

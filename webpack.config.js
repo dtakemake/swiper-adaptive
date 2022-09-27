@@ -3,7 +3,7 @@ import path from 'path'
 const config = {
   mode: 'development',
   entry: {
-    '010-default': path.join(path.resolve(), '/demos/010-default.ts')
+    'demo': path.join(path.resolve(), '/src/demo.ts')
   },
   devtool: 'source-map',
   module: {
@@ -19,8 +19,7 @@ const config = {
     extensions: [ '.js', '.ts' ]
   },
   output: {
-    filename: `[name].development.js`,
-    path: path.join(path.resolve(), '/demos'),
+    filename: `[name].js`,
     clean: false
   }
 }

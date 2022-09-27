@@ -1,5 +1,15 @@
 import Swiper from "swiper";
-const swiperAdaptive = (selector, options, breakpoint = 0, direction = "down") => {
+const toggleInstance = (selector, options) => (instance, conditionToInit) => {
+    if (conditionToInit && instance === undefined) {
+        instance = new Swiper(selector, options);
+    }
+    else if (!conditionToInit && instance !== undefined) {
+        instance.destroy();
+        instance = undefined;
+    }
+    return instance;
+};
+const swiperAdaptive = ({ selector, options, direction, breakpoint }) => {
     // if document don't have an element, exit the function
     if (!document.querySelector(selector))
         return;
@@ -8,25 +18,21 @@ const swiperAdaptive = (selector, options, breakpoint = 0, direction = "down") =
         new Swiper(selector, options);
     // Swiper instance
     let instance = undefined;
+    // preinit
+    const toggle = toggleInstance(selector, options);
     const initSwiper = () => {
         const documentWidth = document.documentElement.clientWidth;
         if (direction === "down") {
-            if (documentWidth > breakpoint && instance === undefined) {
-                instance = new Swiper(selector, options);
-            }
-            else if (documentWidth <= breakpoint && instance !== undefined) {
-                instance.destroy();
-                instance = undefined;
-            }
+            instance = toggle(instance, documentWidth <= breakpoint);
         }
-        else {
-            if (documentWidth <= breakpoint && instance === undefined) {
-                instance = new Swiper(selector, options);
-            }
-            else if (documentWidth > breakpoint && instance !== undefined) {
-                instance.destroy();
-                instance = undefined;
-            }
+        else if (direction === "up") {
+            instance = toggle(instance, documentWidth >= breakpoint);
+        }
+        else if (direction === "center") {
+            instance = toggle(instance, documentWidth >= breakpoint[0] && documentWidth <= breakpoint[1]);
+        }
+        else if (direction === "between") {
+            instance = toggle(instance, documentWidth <= breakpoint[0] || documentWidth >= breakpoint[1]);
         }
     };
     initSwiper();
