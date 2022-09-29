@@ -86,3 +86,7 @@ const swiperAdaptive: ( args: SwiperAdaptiveArgs ) => void = ({
 }
 
 export default swiperAdaptive
+
+export type {
+  SwiperAdaptiveArgs
+}

@@ -10,7 +10,7 @@ $ npm install swiper-adaptive
 
 ### How to use
 
-```js
+```ts
 
 import { Pagination, SwiperOptions } from 'swiper'
 import swiperAdaptive from 'swiper-adaptive'
