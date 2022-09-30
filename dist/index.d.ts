@@ -6,18 +6,23 @@ import { SwiperOptions } from "swiper";
  * @param breakpoint - switching point
  * @param direction - direction of enable
  * @return void
-*/
-declare type SwiperAdaptiveArgs = {
-    selector: string;
-    options: SwiperOptions;
-    direction: "up" | "down";
-    breakpoint: number;
-} | {
-    selector: string;
-    options: SwiperOptions;
-    direction: "center" | "between";
-    breakpoint: [number, number];
+ */
+declare type SwiperAdaptiveArgs =
+  | {
+      selector: string;
+      options: SwiperOptions;
+      direction: "up" | "down";
+      breakpoint: number;
+    }
+  | {
+      selector: string;
+      options: SwiperOptions;
+      direction: "center" | "between";
+      breakpoint: [number, number];
+    };
+declare type SwiperAdaptive = {
+  (args: SwiperAdaptiveArgs): void;
 };
-declare const swiperAdaptive: (args: SwiperAdaptiveArgs) => void;
+declare const swiperAdaptive: SwiperAdaptive;
 export default swiperAdaptive;
-export type { SwiperAdaptiveArgs };
+export type { SwiperAdaptive, SwiperAdaptiveArgs };
