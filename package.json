@@ -7,9 +7,9 @@
   "types": "dist/index.d.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc && npm run format",
     "demos": "webpack --env node=development",
-    "format": "prettier --write \"dist/*.js\"",
+    "format": "prettier --write \"dist/index.js\" \"dist/index.d.ts\"",
     "eslint": "eslint -c .eslintrc.json src/*.ts dist/*.js",
     "prepare": "npm run build",
     "preversion": "npm run eslint",
