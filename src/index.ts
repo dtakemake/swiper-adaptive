@@ -13,7 +13,7 @@ type PreInitToggleInstance = {
   ( selector: string, options: SwiperOptions ): ToggleInstance
 }
 
-const toggleInstance: PreInitToggleInstance = (selector, options) => 
+const preInitToggleInstance: PreInitToggleInstance = (selector, options) => 
   (instance, conditionToInit) => {
     if(conditionToInit && instance === undefined) {
       instance = new Swiper(selector, options)
@@ -46,7 +46,11 @@ type SwiperAdaptiveArgs = {
   breakpoint: [number, number]
 }
 
-const swiperAdaptive: ( args: SwiperAdaptiveArgs ) => void = ({
+type SwiperAdaptive = {
+  ( args: SwiperAdaptiveArgs ): void
+}
+
+const swiperAdaptive: SwiperAdaptive = ({
   selector,
   options,
   direction,
@@ -65,19 +69,19 @@ const swiperAdaptive: ( args: SwiperAdaptiveArgs ) => void = ({
   let instance: SwiperInstance = undefined
 
   // preinit
-  const toggle = toggleInstance(selector, options)
+  const toggleInstance = preInitToggleInstance(selector, options)
 
   const initSwiper = () => {
     const documentWidth = document.documentElement.clientWidth
 
     if (direction === "down") {
-      instance = toggle(instance, documentWidth <= breakpoint)
+      instance = toggleInstance(instance, documentWidth <= breakpoint)
     } else if(direction === "up") {
-      instance = toggle(instance, documentWidth >= breakpoint)
+      instance = toggleInstance(instance, documentWidth >= breakpoint)
     } else if (direction === "center") {
-      instance = toggle(instance, documentWidth >= breakpoint[0] && documentWidth <= breakpoint[1])
+      instance = toggleInstance(instance, documentWidth >= breakpoint[0] && documentWidth <= breakpoint[1])
     } else if(direction === "between") {
-      instance = toggle(instance, documentWidth <= breakpoint[0] || documentWidth >= breakpoint[1])
+      instance = toggleInstance(instance, documentWidth <= breakpoint[0] || documentWidth >= breakpoint[1])
     }
   }
 
@@ -88,5 +92,6 @@ const swiperAdaptive: ( args: SwiperAdaptiveArgs ) => void = ({
 export default swiperAdaptive
 
 export type {
+  SwiperAdaptive,
   SwiperAdaptiveArgs
 }
