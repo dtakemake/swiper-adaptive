@@ -112,9 +112,8 @@ All demos located in ./demos folder.
 ```js
 
 $ git clone https://github.com/dtakemake/swiper-adaptive.git
-
+$ cd swiper-adaptive
 $ npm install
-
 $ npm run demos
 
 ```
