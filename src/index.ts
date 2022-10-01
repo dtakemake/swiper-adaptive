@@ -34,17 +34,19 @@ const preInitToggleInstance: PreInitToggleInstance = (selector, options) =>
 */
 
 // a discriminated union
-type SwiperAdaptiveArgs = {
-  selector: string, 
-  options: SwiperOptions, 
+type BreakpointArgs = {
   direction: "up" | "down", 
   breakpoint: number
 } | {
-  selector: string, 
-  options: SwiperOptions, 
   direction: "center" | "between", 
   breakpoint: [number, number]
 }
+
+type SwiperAdaptiveArgs = {
+  selector: string, 
+  options: SwiperOptions
+} & BreakpointArgs
+
 
 type SwiperAdaptive = {
   ( args: SwiperAdaptiveArgs ): void
