@@ -25,19 +25,6 @@ const options: SwiperOptions = {
   } 
 }
 
-// a discriminated union
-type SwiperAdaptiveArgs = {
-  selector: string, 
-  options: SwiperOptions, 
-  direction: "up" | "down", 
-  breakpoint: number
-} | {
-  selector: string, 
-  options: SwiperOptions, 
-  direction: "center" | "between", 
-  breakpoint: [number, number]
-}
-
 swiperAdaptive({
   selector: '.swiper',
   options,
@@ -45,59 +32,44 @@ swiperAdaptive({
   breakpoint: 991    // number or [number, number]
 })
 
+// a discriminated union
+type BreakpointArgs = {
+  direction: "up" | "down", 
+  breakpoint: number
+} | {
+  direction: "center" | "between", 
+  breakpoint: [number, number]
+}
+
+type SwiperAdaptiveArgs = {
+  selector: string, 
+  options: SwiperOptions
+} & BreakpointArgs
+
 ```
+
 
 #### Examples
 
-if you need to run Swiper when screen width >=576px
-
 ```js
 
 swiperAdaptive({
   selector: '.swiper',
   options,
+
+  // if you need to run Swiper when screen width >=576px
   direction: 'up',
   breakpoint: 576
-})
 
-```
-
-
-if you need to run Swiper when screen width <576px
-
-```js
-
-swiperAdaptive({
-  selector: '.swiper',
-  options,
+  // if you need to run Swiper when screen width <576px
   direction: 'down',
   breakpoint: 575
-})
 
-```
-
-
-if you need to run Swiper when screen width >=576px && <1200
-
-```js
-
-swiperAdaptive({
-  selector: '.swiper',
-  options,
+  // if you need to run Swiper when screen width >=576px && <1200
   direction: 'center',
   breakpoint: [576, 1199]
-})
 
-```
-
-
-if you need to run Swiper when screen width <576px || >=1200
-
-```js
-
-swiperAdaptive({
-  selector: '.swiper',
-  options,
+  // if you need to run Swiper when screen width <576px || >=1200
   direction: 'between',
   breakpoint: [575, 1200]
 })
@@ -109,7 +81,7 @@ swiperAdaptive({
 
 All demos located in ./demos folder.
 
-```js
+```
 
 $ git clone https://github.com/dtakemake/swiper-adaptive.git
 $ cd swiper-adaptive

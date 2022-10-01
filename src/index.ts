@@ -47,7 +47,6 @@ type SwiperAdaptiveArgs = {
   options: SwiperOptions
 } & BreakpointArgs
 
-
 type SwiperAdaptive = {
   ( args: SwiperAdaptiveArgs ): void
 }
@@ -58,16 +57,16 @@ const swiperAdaptive: SwiperAdaptive = ({
   direction,
   breakpoint
 }) => {
-  // if document don't have an element, exit the function
+  // if document don't have the element, exit the function
   if (!document.querySelector(selector)) return
 
-  // we will not call the Swiper if the breakpoint less 320px
+  // we will call the Swiper by default if the breakpoint is less than 320px
   if (breakpoint < 320) {
     new Swiper(selector, options)
     return
   }
 
-  // Swiper instance
+  // Swiper adaptive instance
   let instance: SwiperInstance = undefined
 
   // preinit
