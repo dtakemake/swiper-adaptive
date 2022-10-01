@@ -46,6 +46,10 @@ type SwiperAdaptiveArgs = {
   options: SwiperOptions
 } & BreakpointArgs
 
+type SwiperAdaptive = {
+  ( args: SwiperAdaptiveArgs ): void
+}
+
 ```
 
 
@@ -59,19 +63,19 @@ swiperAdaptive({
 
   // if you need to run Swiper when screen width >=576px
   direction: 'up',
-  breakpoint: 576
+  breakpoint: 576,
 
   // if you need to run Swiper when screen width <576px
   direction: 'down',
-  breakpoint: 575
+  breakpoint: 575,
 
   // if you need to run Swiper when screen width >=576px && <1200
   direction: 'center',
-  breakpoint: [576, 1199]
+  breakpoint: [576, 1199],
 
   // if you need to run Swiper when screen width <576px || >=1200
   direction: 'between',
-  breakpoint: [575, 1200]
+  breakpoint: [575, 1200],
 })
 
 ```
