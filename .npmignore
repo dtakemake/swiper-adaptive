@@ -1,0 +1,6 @@
+demos
+node_modules
+src
+.DS_Store
+.git
+.gitignore
