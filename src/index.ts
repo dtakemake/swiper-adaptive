@@ -74,16 +74,19 @@ const swiperAdaptive: SwiperAdaptive = ({
 
   const initSwiper = () => {
     const documentWidth = document.documentElement.clientWidth
+    let conditionToInit = true
 
     if (direction === "down") {
-      instance = toggleInstance(instance, documentWidth <= breakpoint)
+      conditionToInit = documentWidth <= breakpoint
     } else if(direction === "up") {
-      instance = toggleInstance(instance, documentWidth >= breakpoint)
+      conditionToInit = documentWidth >= breakpoint
     } else if (direction === "center") {
-      instance = toggleInstance(instance, documentWidth >= breakpoint[0] && documentWidth <= breakpoint[1])
+      conditionToInit = documentWidth >= breakpoint[0] && documentWidth <= breakpoint[1]
     } else if(direction === "between") {
-      instance = toggleInstance(instance, documentWidth <= breakpoint[0] || documentWidth >= breakpoint[1])
+      conditionToInit = documentWidth <= breakpoint[0] || documentWidth >= breakpoint[1]
     }
+
+    instance = toggleInstance(instance, conditionToInit)
   }
 
   initSwiper()
