@@ -96,6 +96,7 @@ const swiperAdaptive: SwiperAdaptive = ({
 export default swiperAdaptive
 
 export type {
-  SwiperAdaptive,
-  SwiperAdaptiveArgs
+  BreakpointArgs,
+  SwiperAdaptiveArgs,
+  SwiperAdaptive
 }
