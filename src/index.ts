@@ -1,3 +1,5 @@
+"use strict"
+
 import Swiper, { SwiperOptions } from "swiper"
 
 // instance
@@ -57,7 +59,7 @@ const swiperAdaptive: SwiperAdaptive = ({
   direction,
   breakpoint
 }) => {
-  // if document don't have the element, exit the function
+  // if the document doesn't have the element, exit the function
   if (!document.querySelector(selector)) return
 
   // we will call the Swiper by default if the breakpoint is less than 320px

@@ -1,10 +1,11 @@
 "use strict"
+
 import { Pagination, SwiperOptions } from 'swiper'
 import swiperAdaptive from './index'
 
 type ReadyCallbackFn = () => void
 
-// запуск
+// the launching
 const ready = (callback: ReadyCallbackFn) => {
   if(document.readyState !== 'loading') {
     callback()
