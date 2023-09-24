@@ -63,7 +63,7 @@ const swiperAdaptive: SwiperAdaptive = ({
   if (!document.querySelector(selector)) return
 
   // we will call the Swiper by default if the breakpoint is less than 320px
-  if (breakpoint < 320) {
+  if ( typeof breakpoint === 'number' && breakpoint < 320 ) {
     new Swiper(selector, options)
     return
   }
